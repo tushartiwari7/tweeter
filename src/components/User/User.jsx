@@ -4,7 +4,11 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 export const User = () => {
+  const {
+    users: [user],
+  } = useAuth();
   return (
     <div>
       <img src="https://picsum.photos/400/100" width="100%" alt="user" />
@@ -29,10 +33,10 @@ export const User = () => {
       </Container>
       <div className="user-info">
         <Typography variant="h5" sx={{ color: "var(--primary-color)" }}>
-          Tushar Tiwari
+          {user.firstName} {user.lastName}
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          tushartiwari7
+          {user.bio || "No bio available"}
         </Typography>
         <div className="follow-info">
           <Link to="followers">645 followers</Link>

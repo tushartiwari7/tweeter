@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
       );
       setUsers(resp.data);
     })();
-  });
+  }, []);
 
   return (
     <AuthContext.Provider value={{ loginState, setLoginState, users }}>
