@@ -3,6 +3,8 @@ import "./App.css";
 import { Login, Profile, Dashboard } from "./pages";
 
 function App() {
+  fetch("");
+
   return (
     <div className="App">
       <Routes>

@@ -8,6 +8,8 @@ export const Dashboard = () => {
     <Container
       sx={{
         height: "100vh",
+        display: "grid",
+        gridTemplateColumns: "auto 1fr",
       }}
     >
       <Sidebar />

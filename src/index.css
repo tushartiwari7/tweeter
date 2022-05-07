@@ -29,4 +29,9 @@ code {
   --highlight-color: rgba(51, 97, 204, 0.4);
   --transition: all 0.3s ease;
   --highlighted-font: "Poppins", sans-serif;
+
+  --c-sidebar: var(--background-color);
+  --c-default: #0f141a;
+  --c-active: #1da1f2;
+  --c-hover: #ebf5fe;
 }
