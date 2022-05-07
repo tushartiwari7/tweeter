@@ -1,12 +1,20 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Login, Profile, Dashboard } from "./pages";
+import { RequireAuth } from "./components";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Dashboard />}>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route path=":profileId" element={<Profile />} />
         </Route>
         <Route path="/login" element={<Login />} />
