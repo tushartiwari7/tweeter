@@ -106,7 +106,7 @@ export const Sidebar = () => {
                     <path d="M3.25 4.75C3.25 3.36929 4.36929 2.25 5.75 2.25H18.25C19.6307 2.25 20.75 3.36929 20.75 4.75V22.25H3.25V4.75Z" />
                   </clipPath>
                 </defs>
-                <g clip-path="url(#default-clip)">
+                <g clipPath="url(#default-clip)">
                   <path
                     className="background"
                     d="M3.25 4.75C3.25 3.36929 4.36929 2.25 5.75 2.25H18.25C19.6307 2.25 20.75 3.36929 20.75 4.75V15.25H3.25V4.75Z"
