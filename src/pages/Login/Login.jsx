@@ -100,7 +100,8 @@ export function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               onClick={() => {
-                setLoginState(!loginState);
+                setLoginState(true);
+                localStorage.setItem("isLogin", true);
                 navigate(location?.state?.from?.pathname ?? "/", {
                   replace: true,
                 });
