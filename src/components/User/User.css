@@ -1,0 +1,24 @@
+.avatar-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100px;
+}
+.avatar-container img {
+  margin: auto;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 5px solid var(--background-color);
+  position: absolute;
+}
+.follow-info {
+  display: flex;
+  gap: 1rem;
+  color: var(--primary-color);
+}
+.follow-info > a {
+  color: var(--primary-color);
+  text-decoration-color: var(--foreground-color);
+}
