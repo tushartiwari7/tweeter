@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { Login, Profile, Dashboard, ComponentDisplay } from "./pages";
 import { User } from "./components";
-import { Login, Profile, Dashboard } from "./pages";
 import { RequireAuth } from "./components";
+
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<User />} />
           </Route>
         </Route>
+        <Route path="/temp" element={<ComponentDisplay/>} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
