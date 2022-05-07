@@ -14,15 +14,15 @@ function App() {
           element={
             <RequireAuth>
               <Dashboard />
-            </RequireAuth>
+           </RequireAuth>
           }
         >
           <Route index element={<h2>404 page</h2>} />
-          <Route path=":profileId" element={<Profile />}>
+          <Route path=":profileId" element={ <Profile />}>
             <Route index element={<User />} />
           </Route>
         </Route>
-        <Route path="/temp" element={<ComponentDisplay/>} />
+        <Route path="/temp" element={ <ComponentDisplay/> } />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
