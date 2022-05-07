@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Login, Profile, Dashboard } from "./pages";
+import { Login, Profile, Dashboard, ComponentDisplay } from "./pages";
 
 function App() {
   fetch("");
@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<Dashboard />}>
           <Route path=":profileId" element={<Profile />} />
         </Route>
+        <Route path="/temp" element={<ComponentDisplay/>} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>
