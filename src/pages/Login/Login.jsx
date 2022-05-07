@@ -25,7 +25,7 @@ function Copyright(props) {
       {"Copyright © "}
       <Link color="inherit" href="https://github.com/tushartiwari7/tweeter">
         Tweeter
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -36,7 +36,6 @@ export function Login() {
   const { loginState, setLoginState } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(loginState);
   return (
     <ThemeProvider theme={DarkTheme}>
       <Container component="main" maxWidth="sm">
@@ -100,7 +99,8 @@ export function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               onClick={() => {
-                setLoginState(!loginState);
+                setLoginState(true);
+                localStorage.setItem("isLogin", true);
                 navigate(location?.state?.from?.pathname ?? "/", {
                   replace: true,
                 });

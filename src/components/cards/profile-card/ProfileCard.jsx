@@ -16,7 +16,7 @@ export function ProfileCard() {
           display: "flex",
           width: "27rem",
           height: "6rem",
-          padding: "0.5rem",
+          padding: "0.5rem 1rem",
           margin:"10rem",
           justifyContent: "space-between",
         }}
@@ -31,22 +31,22 @@ export function ProfileCard() {
           <CardMedia
             component="img"
             sx={{ borderRadius: "50%", width: 70, height: 70 }}
-            image="https://pbs.twimg.com/profile_images/1465392583194992640/qAD__iJb_400x400.jpg"
-            alt="Rushikesh Tarapure"
+            image="https://pbs.twimg.com/profile_images/1386919873435996160/RNgT6yEg_400x400.jpg"
+            alt="Jantu Deb"
           />
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h6">
-              Rushikesh Tarapure
+        <Box sx={{ display: "flex", flexDirection: "column",flexGrow:"1" }}>
+          <CardContent sx={{pl:"2rem"}}>
+            <Typography component="div" variant="h6" sx={{textAlign:"left" }}>
+              Jantu Deb
             </Typography>
             <Typography
               variant="subtitle1"
               color="text.secondary"
               component="div"
             >
-              @Neo_MonkStar
+              @Jantu__Deb
             </Typography>
           </CardContent>
         </Box>

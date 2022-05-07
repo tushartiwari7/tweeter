@@ -6,7 +6,10 @@ const defaultState = { loginState: false };
 const AuthContext = createContext(defaultState);
 
 export const AuthProvider = ({ children }) => {
-  const [loginState, setLoginState] = useState(false);
+  const currentState = localStorage.getItem("isLogin");
+  const [loginState, setLoginState] = useState(
+    currentState ? currentState : false
+  );
   const [users, setUsers] = useState([]);
   useEffect(() => {
     (async () => {
