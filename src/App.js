@@ -4,6 +4,8 @@ import { Login, Profile, Dashboard } from "./pages";
 import { RequireAuth } from "./components";
 
 function App() {
+  fetch("");
+
   return (
     <div className="App">
       <Routes>

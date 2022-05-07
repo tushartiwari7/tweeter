@@ -6,7 +6,6 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -39,22 +38,23 @@ export function Login() {
   const navigate = useNavigate();
   console.log(loginState);
   return (
-    <ThemeProvider theme={DarkTheme} sx={{ bgcolor: "background.light" }}>
-      <Container component="main" maxWidth="s">
+    <ThemeProvider theme={DarkTheme}>
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginLeft: 50,
-            marginRight: 50,
-            paddingLeft: 20,
-            paddingRight: 20,
+            marginTop: 6,
+            marginLeft: "auto",
+            marginRight: "auto",
+            paddingLeft: 10,
+            paddingRight: 10,
             paddingTop: 6,
             paddingBottom: 6,
             bgcolor: "background.dark",
+            borderRadius: "10px",
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
@@ -108,18 +108,6 @@ export function Login() {
             >
               Log In As Guest
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
