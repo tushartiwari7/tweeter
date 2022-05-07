@@ -10,7 +10,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { ThemeProvider } from "@mui/material/styles";
-import { DarkTheme } from "../../components/palette/DarkTheme";
+import { DarkTheme } from "../../components";
+import { useAuth } from "../../context/AuthContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -31,6 +33,10 @@ function Copyright(props) {
 }
 
 export function Login() {
+  const { loginState, setLoginState } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(loginState);
   return (
     <ThemeProvider theme={DarkTheme}>
       <Container component="main" maxWidth="sm">
@@ -93,6 +99,12 @@ export function Login() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={() => {
+                setLoginState(!loginState);
+                navigate(location?.state?.from?.pathname ?? "/", {
+                  replace: true,
+                });
+              }}
             >
               Log In As Guest
             </Button>
