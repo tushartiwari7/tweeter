@@ -1,18 +1,17 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import { NotFound } from "../NotFound/NotFound";
 
 export const Profile = () => {
-  const profile = true;
+  const { profileId } = useParams();
+  const { users } = useAuth();
+  const user = users.find((user) => user.userName === profileId);
   return (
     <>
-      {profile ? (
-        <Grid
-          container
-          gridTemplateRows="auto auto auto 1fr"
-          direction="column"
-        >
+      {user ? (
+        <Grid container direction="column">
           <Grid
             item
             sx={{
@@ -20,9 +19,11 @@ export const Profile = () => {
               paddingLeft: 2,
             }}
           >
-            <Typography variant="h5">Tushar Tiwari</Typography>
+            <Typography variant="h5">{`${user?.firstName ?? "John"} ${
+              user?.lastName ?? "Doe"
+            }`}</Typography>
             <Typography variant="subtitle1" gutterBottom>
-              tushartiwari7
+              {user.userName}
             </Typography>
           </Grid>
           <Outlet />

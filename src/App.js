@@ -1,6 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Login, Profile, Dashboard, ComponentDisplay, NotFound } from "./pages";
+import {
+  Login,
+  Profile,
+  Dashboard,
+  ComponentDisplay,
+  FollowInsights,
+  NotFound,
+} from "./pages";
 import { User } from "./components";
 import { RequireAuth } from "./components";
 
@@ -19,6 +26,8 @@ function App() {
         >
           <Route path="/:profileId" element={<Profile />}>
             <Route index element={<User />} />
+            <Route path="followers" element={<FollowInsights />} />
+            <Route path="followings" element={<FollowInsights />} />
           </Route>
         </Route>
         <Route path="/temp" element={<ComponentDisplay />} />

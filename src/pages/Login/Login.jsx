@@ -35,6 +35,7 @@ function Copyright(props) {
 export function Login() {
   const { setLoginState } = useAuth();
   const location = useLocation();
+  const from = location?.state?.from?.pathname;
   const navigate = useNavigate();
   return (
     <ThemeProvider theme={DarkTheme}>
@@ -101,7 +102,7 @@ export function Login() {
               onClick={() => {
                 setLoginState(true);
                 localStorage.setItem("isLogin", true);
-                navigate(location?.state?.from?.pathname ?? "/", {
+                navigate(from || from === "/" ? "/aadarshbalika" : from, {
                   replace: true,
                 });
               }}
