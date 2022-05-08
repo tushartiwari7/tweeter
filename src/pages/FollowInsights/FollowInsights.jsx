@@ -1,12 +1,17 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { NavTabs } from "../../components";
+import { NavTabs, ProfileCard } from "../../components";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Box, Input, TextField } from "@mui/material";
+import { Box, Input, List } from "@mui/material";
+import { useAuth } from "../../context/AuthContext";
+import "./FollowInsights.css";
 export const FollowInsights = () => {
   const location = useLocation();
-  const pathname = location.pathname.split("/")[2];
-  console.log(pathname);
+  const [username, path] = location.pathname.split("/").filter((x) => x);
+
+  const { users } = useAuth();
+  const user = users.find((x) => x.userName === username);
+
   return (
     <>
       <NavTabs />
@@ -17,7 +22,7 @@ export const FollowInsights = () => {
           display: "flex",
           alignItems: "center",
           color: "var(--primary-color)",
-          my: 2,
+          mt: 2,
         }}
         variant="fullWidth"
       >
@@ -38,6 +43,16 @@ export const FollowInsights = () => {
         />
       </Box>
       {/* list of users: followings, followers */}
+      <List
+        className="webkit-scrollbar"
+        sx={{ width: "100%", bgcolor: "background.dark", overflow: "auto" }}
+      >
+        {(path === "followings" ? user.following : user.follower).map(
+          (profile) => (
+            <ProfileCard key={profile.userId} {...profile} />
+          )
+        )}
+      </List>
     </>
   );
 };

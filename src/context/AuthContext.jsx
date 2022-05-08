@@ -13,10 +13,17 @@ export const AuthProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     (async () => {
-      const resp = await axios.get(
-        "https://my-json-server.typicode.com/rkapoor10/Twitter-API-user-tweets-endpoint/users"
-      );
-      setUsers(resp.data);
+      const responses = await Promise.all([
+        axios.get(
+          "https://my-json-server.typicode.com/rkapoor10/twitter-API-profiles-endpointOne/profiles"
+        ),
+        axios.get(
+          "https://my-json-server.typicode.com/rkapoor10/twitter-API-profiles-endpointTwo/profiles"
+        ),
+      ]);
+      const fetchedUsers = [...responses[0].data, ...responses[1].data];
+      console.log({ fetchedUsers });
+      setUsers(fetchedUsers);
     })();
   }, []);
 
