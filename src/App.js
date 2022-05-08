@@ -6,6 +6,7 @@ import {
   Dashboard,
   ComponentDisplay,
   FollowInsights,
+  NotFound,
 } from "./pages";
 import { User } from "./components";
 import { RequireAuth } from "./components";
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/"
           element={
@@ -22,8 +24,7 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<h2>No User found</h2>} />
-          <Route path=":profileId" element={<Profile />}>
+          <Route path="/:profileId" element={<Profile />}>
             <Route index element={<User />} />
             <Route path="followers" element={<FollowInsights />} />
             <Route path="followings" element={<FollowInsights />} />
