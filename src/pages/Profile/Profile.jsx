@@ -8,6 +8,7 @@ export const Profile = () => {
   const { profileId } = useParams();
   const { users } = useAuth();
   const user = users.find((user) => user.userName === profileId);
+
   return (
     <>
       {user ? (
