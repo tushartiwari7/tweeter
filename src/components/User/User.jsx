@@ -36,11 +36,11 @@ export const User = () => {
           {user?.firstName} {user?.lastName}
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          {user?.bio || "No bio available"}
+          {user?.userBio || "No bio available"}
         </Typography>
         <div className="follow-info">
           <Link to="followers">645 followers</Link>
-          <Link to="following">645 following</Link>
+          <Link to="followings">645 following</Link>
         </div>
       </div>
     </div>

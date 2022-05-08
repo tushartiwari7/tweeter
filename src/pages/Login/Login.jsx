@@ -102,7 +102,7 @@ export function Login() {
               onClick={() => {
                 setLoginState(true);
                 localStorage.setItem("isLogin", true);
-                navigate(from || from === "/" ? "/adarshbalika" : from, {
+                navigate(from || from === "/" ? "/aadarshbalika" : from, {
                   replace: true,
                 });
               }}

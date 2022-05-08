@@ -11,11 +11,7 @@ export const Profile = () => {
   return (
     <>
       {user ? (
-        <Grid
-          container
-          gridTemplateRows="auto auto auto 1fr"
-          direction="column"
-        >
+        <Grid container direction="column">
           <Grid
             item
             sx={{
