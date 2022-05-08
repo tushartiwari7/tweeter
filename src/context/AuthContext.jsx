@@ -22,7 +22,6 @@ export const AuthProvider = ({ children }) => {
         ),
       ]);
       const fetchedUsers = [...responses[0].data, ...responses[1].data];
-      console.log({ fetchedUsers });
       setUsers(fetchedUsers);
     })();
   }, []);

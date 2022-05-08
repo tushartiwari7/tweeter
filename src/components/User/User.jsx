@@ -8,7 +8,6 @@ import { useAuth } from "../../context/AuthContext";
 export const User = () => {
   const { users } = useAuth();
   const params = useParams();
-  console.log(params);
   const user = users.find((user) => user.userName === params.profileId);
   return (
     <div>
@@ -40,8 +39,8 @@ export const User = () => {
           {user?.userBio || "No bio available"}
         </Typography>
         <div className="follow-info">
-          <Link to="followers">645 followers</Link>
-          <Link to="followings">645 following</Link>
+          <Link to="followers">{user?.noOfFollower} followers</Link>
+          <Link to="followings">{user?.noOfFollowing} following</Link>
         </div>
       </div>
     </div>

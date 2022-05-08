@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { NotFound } from "../NotFound/NotFound";
 
@@ -27,9 +27,14 @@ export const Profile = () => {
               paddingLeft: 2,
             }}
           >
-            <Typography variant="h5">{`${user?.firstName ?? "John"} ${
-              user?.lastName ?? "Doe"
-            }`}</Typography>
+            <Link to={`/${user.userName}`}>
+              <Typography
+                variant="h5"
+                sx={{ color: "var(--primary-color)" }}
+              >{`${user?.firstName ?? "John"} ${
+                user?.lastName ?? "Doe"
+              }`}</Typography>
+            </Link>
             <Typography variant="subtitle1" gutterBottom>
               {user.userName}
             </Typography>
