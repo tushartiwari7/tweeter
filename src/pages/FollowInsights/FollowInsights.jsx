@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavTabs, ProfileCard } from "../../components";
+import AccountCircle from "@mui/icons-material/AccountCircle";
 import { Box, Input, List, Typography } from "@mui/material";
 import { useAuth } from "../../context/AuthContext";
 import "./FollowInsights.css";
@@ -29,7 +30,6 @@ export const FollowInsights = () => {
   return (
     <>
       <NavTabs />
-      {/* searchbar */}
       <Box
         sx={{
           width: "100%",
@@ -40,6 +40,7 @@ export const FollowInsights = () => {
         }}
         variant="fullWidth"
       >
+        <AccountCircle sx={{ mr: 1, my: 0.5 }} />
         <Input
           id="input-with-sx"
           label="With sx"

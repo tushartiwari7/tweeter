@@ -1,7 +1,13 @@
 import React from "react";
 import "./Sidebar.css";
+import Button from "@mui/material/Button";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export const Sidebar = () => {
+  const { setLoginState } = useAuth();
+  const navigate = useNavigate();
   return (
     <aside>
       <svg className="logo" viewBox="0 0 28 28">
@@ -155,6 +161,21 @@ export const Sidebar = () => {
             Profile
           </div>
         </button>
+        <Button
+          variant="contained"
+          sx={{
+            height: "fit-content",
+            color: "white",
+          }}
+          onClick={() => {
+            toast.success("logged out successfully");
+            setLoginState(false);
+            localStorage.setItem("isLogin", false);
+            navigate("/");
+          }}
+        >
+          Logout
+        </Button>
       </nav>
     </aside>
   );

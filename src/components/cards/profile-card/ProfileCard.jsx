@@ -7,18 +7,24 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
-export function ProfileCard() {
+export function ProfileCard({ firstName, lastName, userImage, userName }) {
+  const navigator = useNavigate();
   return (
     <ThemeProvider theme={DarkTheme}>
       <Card
         sx={{
           display: "flex",
-          width: "27rem",
+          width: "100%",
           height: "6rem",
-          padding: "0.5rem",
-          margin:"10rem",
+          padding: "0.5rem 1rem",
           justifyContent: "space-between",
+          cursor: "pointer",
+          mb: 1,
+        }}
+        onClick={() => {
+          navigator(`/${userName}`);
         }}
       >
         <Box
@@ -31,22 +37,22 @@ export function ProfileCard() {
           <CardMedia
             component="img"
             sx={{ borderRadius: "50%", width: 70, height: 70 }}
-            image="https://pbs.twimg.com/profile_images/1465392583194992640/qAD__iJb_400x400.jpg"
-            alt="Rushikesh Tarapure"
+            image={userImage}
+            alt={`${firstName} ${lastName}`}
           />
         </Box>
 
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h6">
-              Rushikesh Tarapure
+        <Box sx={{ display: "flex", flexDirection: "column", flexGrow: "1" }}>
+          <CardContent sx={{ pl: "2rem" }}>
+            <Typography component="div" variant="h6" sx={{ textAlign: "left" }}>
+              {`${firstName} ${lastName}`}
             </Typography>
             <Typography
               variant="subtitle1"
               color="text.secondary"
               component="div"
             >
-              @Neo_MonkStar
+              {userName}
             </Typography>
           </CardContent>
         </Box>
@@ -56,6 +62,7 @@ export function ProfileCard() {
             sx={{
               height: "fit-content",
               color: "secondary.main",
+              mr: 3,
             }}
           >
             Follow
