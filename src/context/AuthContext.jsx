@@ -13,17 +13,13 @@ export const AuthProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     (async () => {
-      const responses = await Promise.all([
-        axios.get(
-          "https://my-json-server.typicode.com/rkapoor10/twitter-API-profiles-endpointOne/profiles"
-        ),
-        axios.get(
-          "https://my-json-server.typicode.com/rkapoor10/twitter-API-profiles-endpointTwo/profiles"
-        ),
-      ]);
-      const fetchedUsers = [...responses[0].data, ...responses[1].data];
-      console.log({ fetchedUsers });
-      setUsers(fetchedUsers);
+      const {
+        data: { profiles },
+      } = await axios.get(
+        "https://twitter-api-endpoint.herokuapp.com/api/profiles"
+      );
+      console.log(profiles);
+      setUsers(profiles);
     })();
   }, []);
 
