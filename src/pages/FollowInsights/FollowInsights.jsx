@@ -14,7 +14,7 @@ export const FollowInsights = () => {
   const [filteredList, setFilteredList] = useState(list);
 
   const getList = (searchQuery) => {
-    setFilteredList(list.filter((x) => x.userName.includes(searchQuery)));
+    setFilteredList(list.filter((x) => x.userName.includes(searchQuery.toLowerCase())));
   };
 
   const debounce = (fn, ms) => {
@@ -30,7 +30,6 @@ export const FollowInsights = () => {
   return (
     <>
       <NavTabs />
-      {/* searchbar */}
       <Box
         sx={{
           width: "100%",

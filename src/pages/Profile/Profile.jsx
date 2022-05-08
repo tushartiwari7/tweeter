@@ -20,6 +20,7 @@ export const Profile = () => {
             display: "grid",
             gridTemplateRows: "auto auto auto 1fr",
             height: "100vh",
+            marginTop:"2rem"
           }}
         >
           

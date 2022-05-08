@@ -1,5 +1,6 @@
 import React from "react";
-import { ProfileCard } from "../../components";
+import { ProfileCard, TweetCard  } from "../../components";
+
 
 export const ComponentDisplay = () => {
     console.log("this is component")
@@ -7,6 +8,7 @@ export const ComponentDisplay = () => {
         <>
             <h3>This will be component space</h3>
             <ProfileCard/>
+            <TweetCard/>
         </>
     )
 }
