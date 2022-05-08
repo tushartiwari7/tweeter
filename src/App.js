@@ -5,8 +5,7 @@ import {
   Profile,
   Dashboard,
   ComponentDisplay,
-  Followers,
-  Followings,
+  FollowInsights,
 } from "./pages";
 import { User } from "./components";
 import { RequireAuth } from "./components";
@@ -26,8 +25,8 @@ function App() {
           <Route index element={<h2>No User found</h2>} />
           <Route path=":profileId" element={<Profile />}>
             <Route index element={<User />} />
-            <Route path="followers" element={<Followers />} />
-            <Route path="followings" element={<Followings />} />
+            <Route path="followers" element={<FollowInsights />} />
+            <Route path="followings" element={<FollowInsights />} />
           </Route>
         </Route>
         <Route path="/temp" element={<ComponentDisplay />} />

@@ -33,10 +33,10 @@ export const User = () => {
       </Container>
       <div className="user-info">
         <Typography variant="h5" sx={{ color: "var(--primary-color)" }}>
-          {user.firstName} {user.lastName}
+          {user?.firstName} {user?.lastName}
         </Typography>
         <Typography variant="subtitle1" gutterBottom>
-          {user.bio || "No bio available"}
+          {user?.bio || "No bio available"}
         </Typography>
         <div className="follow-info">
           <Link to="followers">645 followers</Link>
