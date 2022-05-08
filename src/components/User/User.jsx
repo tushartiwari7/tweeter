@@ -3,12 +3,13 @@ import "./User.css";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 export const User = () => {
-  const {
-    users: [user],
-  } = useAuth();
+  const { users } = useAuth();
+  const params = useParams();
+  console.log(params);
+  const user = users.find((user) => user.userName === params.profileId);
   return (
     <div>
       <img src="https://picsum.photos/400/100" width="100%" alt="user" />
@@ -18,7 +19,7 @@ export const User = () => {
           display: "flex",
         }}
       >
-        <img src="https://picsum.photos/200" className="avatar" alt="user" />
+        <img src={user?.userImage} className="avatar" alt="user" />
         <Button
           variant="contained"
           sx={{

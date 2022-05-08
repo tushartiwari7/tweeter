@@ -8,6 +8,8 @@
 }
 .avatar-container img {
   margin: auto;
+  width: 200px;
+  height: 200px;
   transform: translateY(-50%);
   border-radius: 50%;
   border: 5px solid var(--background-color);

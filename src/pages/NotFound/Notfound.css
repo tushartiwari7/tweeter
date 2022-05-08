@@ -3,136 +3,129 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #1d1e22;
-    color: #fff;
-    font-family: "BioRhyme", serif;
-    overflow: hidden;
+  background: #1d1e22;
+  color: #fff;
+  font-family: "BioRhyme", serif;
 }
 
 .big_text {
-    display: grid;
-    place-items: center;
-    padding: 8rem;
+  display: grid;
+  place-items: center;
+  padding: 8rem;
 }
 
 .big_text h1 {
-    font-size: 10rem;
-    transform: translatez(20rem);
-
+  font-size: 10rem;
+  transform: translatez(20rem);
 }
 
 .color_blue {
-    color: #1976D2;
-    text-shadow: none;
-    animation: visible 2s infinite;
-
+  color: #1976d2;
+  text-shadow: none;
+  animation: visible 2s infinite;
 }
 
 .big_text p {
-    letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 a {
-    color: #1976D2;
+  color: #1976d2;
 }
 
 .small_texts {
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
 
 .small_texts p {
-    color: #888a85;
-    animation: float 8s infinite;
-    transform: translatey(4rem);
+  color: #888a85;
+  animation: float 8s infinite;
+  transform: translatey(4rem);
 }
 
 @keyframes float {
-    0% {
-        transition: translatey(0);
-    }
+  0% {
+    transition: translatey(0);
+  }
 
-    100% {
-        transform: translatey(-40rem);
-        opacity: (0);
-    }
+  100% {
+    transform: translatey(-40rem);
+    opacity: (0);
+  }
 }
 
-
 @keyframes visible {
-    0% {
-        opacity: (1);
-    }
+  0% {
+    opacity: (1);
+  }
 
-    20% {
-        opacity: (0.5);
+  20% {
+    opacity: (0.5);
+  }
 
-    }
+  50% {
+    opacity: (0.3);
+  }
 
-    50% {
-        opacity: (0.3);
-    }
-
-    100% {
-        opacity: (0.9);
-
-    }
+  100% {
+    opacity: (0.9);
+  }
 }
 
 .small_texts p:nth-child(1) {
-    animation-delay: 2.2s;
+  animation-delay: 2.2s;
 }
 
 .small_texts p:nth-child(2) {
-    animation-delay: 4s;
+  animation-delay: 4s;
 }
 
 .small_texts p:nth-child(3) {
-    animation-delay: 7s;
+  animation-delay: 7s;
 }
 
 .small_texts p:nth-child(4) {
-    animation-delay: 5.5s;
+  animation-delay: 5.5s;
 }
 
 .small_texts p:nth-child(5) {
-    animation-delay: 6.78s;
+  animation-delay: 6.78s;
 }
 
 .small_texts p:nth-child(6) {
-    animation-delay: 4.9s;
+  animation-delay: 4.9s;
 }
 
 .small_texts p:nth-child(7) {
-    animation-delay: 2.9s;
+  animation-delay: 2.9s;
 }
 
 .small_texts p:nth-child(8) {
-    animation-delay: 6s;
+  animation-delay: 6s;
 }
 
 .small_texts p:nth-child(9) {
-    animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 
 .small_texts p:nth-child(10) {
-    animation-delay: 3.8s;
+  animation-delay: 3.8s;
 }
 
 .small_texts p:nth-child(11) {
-    animation-delay: 6s;
+  animation-delay: 6s;
 }
 
 .small_texts p:nth-child(12) {
-    animation-delay: 7s;
+  animation-delay: 7s;
 }
 
 .small_texts p:nth-child(13) {
-    animation-delay: 2.2s;
+  animation-delay: 2.2s;
 }
