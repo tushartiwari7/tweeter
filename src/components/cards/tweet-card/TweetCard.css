@@ -1,0 +1,15 @@
+.hover-green:hover {
+  color: rgb(5, 197, 5);
+}
+.hover-blue:hover {
+  color: rgb(4, 165, 240);
+}
+.hover-pink:hover {
+  color: rgb(247, 16, 54);
+}
+.hover-blue svg,
+.hover-green svg,
+.hover-pink svg {
+  margin-right: 5px;
+  font-size: 1.5rem;
+}
