@@ -12,43 +12,46 @@ import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../../index";
 import "./TweetCard.css";
 
-export function TweetCard() {
+export function TweetCard({tweet}) {
+    console.log(tweet)
+    const {firstName, lastName, userName, likes, comments, retweets, tweetData, userImage, tweetImg} = tweet
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Card sx={{ maxWidth: 550, margin: "50px" }}>
+      <Card sx={{ maxWidth: 550, margin:"5px" }}>
         <CardHeader
           avatar={
             <CardMedia
               component="img"
               sx={{ borderRadius: "50%", width: 50, height: 50 }}
-              image="https://pbs.twimg.com/profile_images/1465392583194992640/qAD__iJb_400x400.jpg"
-              alt=""
+              image={userImage}
+              alt="user Image"
             />
           }
           action={
             <IconButton aria-label="settings">{/* add icon */}</IconButton>
           }
-          title="Rushikesh Tarapure"
-          subheader="@Neo_MonkStar"
+          title={firstName + lastName}
+          subheader={userName}
         />
         <Box sx={{ marginLeft: "59px" }}>
           <CardContent>
             <Typography variant="body2" color="text.secondary">
-              This impressive paella is a perfect party dish and a fun meal to
-              cook together with your guests. Add 1 cup of frozen peas along
-              with the mussels, if you like.
+              {tweetData}
             </Typography>
           </CardContent>
-          <CardMedia
-            sx={{
-              padding: "20px",
-              borderRadius: "20px",
-            }}
-            component="img"
-            height="210"
-            image="https://pbs.twimg.com/media/FSN1EzCaAAEc5Fa?format=jpg&name=small"
-            alt="Paella dish"
-          />
+          <>
+          {
+              tweetImg && <CardMedia
+              sx={{
+                padding: "20px",
+                borderRadius: "20px",
+              }}
+              component="img"
+              minHeight="210"
+              image={tweetImg}
+              alt="Paella dish"
+            />
+          }</>
           <CardActions
             disableSpacing
             sx={{ display: "flex", justifyContent: "space-around" }}
@@ -62,7 +65,7 @@ export function TweetCard() {
               }}
               className="hover-blue"
             >
-              <FaRegComment sx={{ mr: 2 }} /> 200
+              <FaRegComment sx={{ mr: 2 }} /> {comments}
             </Box>
             <Box
               sx={{
@@ -73,7 +76,7 @@ export function TweetCard() {
               }}
               className="hover-green"
             >
-              <FaRetweet sx={{ mr: 2 }} /> 2K
+              <FaRetweet sx={{ mr: 2 }} /> {retweets}K
             </Box>
             <Box
               sx={{
@@ -84,7 +87,7 @@ export function TweetCard() {
               }}
               className="hover-pink"
             >
-              <FaRegHeart sx={{ mr: 2 }} /> 5k
+              <FaRegHeart sx={{ mr: 2 }} /> {likes}k
             </Box>
           </CardActions>
         </Box>
