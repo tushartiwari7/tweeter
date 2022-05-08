@@ -4,6 +4,7 @@ import { Link, Outlet, useParams } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { NotFound } from "../NotFound/NotFound";
 
+
 export const Profile = () => {
   const { profileId } = useParams();
   const { users } = useAuth();
@@ -21,6 +22,7 @@ export const Profile = () => {
             height: "100vh",
           }}
         >
+          
           <Grid
             item
             sx={{

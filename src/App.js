@@ -10,6 +10,7 @@ import {
 } from "./pages";
 import { User } from "./components";
 import { RequireAuth } from "./components";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -33,6 +34,15 @@ function App() {
         <Route path="/temp" element={<ComponentDisplay />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: "#000000",
+            color: "#fff",
+          },
+        }}
+      />
     </div>
   );
 }

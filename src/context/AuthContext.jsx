@@ -11,6 +11,20 @@ export const AuthProvider = ({ children }) => {
     currentState ? currentState : false
   );
   const [users, setUsers] = useState([]);
+  const [userDetails, setUserDetails] = useState({});
+  const getLoginDetails = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://my-json-server.typicode.com/rkapoor10/Twitter-API-user-tweets-endpoint/users"
+      );
+      const loginDetails = data[0];
+      const { email, password } = loginDetails;
+      setUserDetails({ email, password });
+      return data[0];
+    } catch (e) {
+      console.log(e);
+    }
+  };
   useEffect(() => {
     (async () => {
       const {
@@ -18,13 +32,15 @@ export const AuthProvider = ({ children }) => {
       } = await axios.get(
         "https://twitter-api-endpoint.herokuapp.com/api/profiles"
       );
-      console.log(profiles);
       setUsers(profiles);
+      getLoginDetails();
     })();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ loginState, setLoginState, users }}>
+    <AuthContext.Provider
+      value={{ loginState, setLoginState, users, userDetails }}
+    >
       {children}
     </AuthContext.Provider>
   );

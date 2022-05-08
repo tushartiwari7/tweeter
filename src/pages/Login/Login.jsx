@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,6 +14,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../../components";
 import { useAuth } from "../../context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Copyright(props) {
   return (
@@ -33,10 +35,28 @@ function Copyright(props) {
 }
 
 export function Login() {
-  const { setLoginState } = useAuth();
+  const { setLoginState, userDetails } = useAuth();
   const location = useLocation();
   const from = location?.state?.from?.pathname;
   const navigate = useNavigate();
+  const [user, setUser] = useState({ userEmail: "", userPassword: "" });
+
+  const loginHandler = (e) => {
+    console.log("button clicked");
+    const { userEmail, userPassword } = user;
+    const { email, password } = userDetails;
+    // eslint-disable-next-line eqeqeq
+    if (userEmail == email && userPassword == password) {
+      toast.success("logged in successfully");
+      setLoginState(true);
+      localStorage.setItem("isLogin", true);
+      navigate(from || from === "/" ? "/aadarshbalika" : from, {
+        replace: true,
+      });
+    } else {
+      toast.error("wrong login credentials");
+    }
+  };
   return (
     <ThemeProvider theme={DarkTheme}>
       <Container component="main" maxWidth="sm">
@@ -71,6 +91,8 @@ export function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => setUser({ ...user, userEmail: e.target.value })}
+              value={user.userEmail}
             />
             <TextField
               margin="normal"
@@ -81,6 +103,10 @@ export function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e) =>
+                setUser({ ...user, userPassword: e.target.value })
+              }
+              value={user.userPassword}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -91,6 +117,7 @@ export function Login() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              onClick={(e) => loginHandler(e)}
             >
               Log In
             </Button>
@@ -100,6 +127,7 @@ export function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               onClick={() => {
+                toast.success("logged in successfully");
                 setLoginState(true);
                 localStorage.setItem("isLogin", true);
                 navigate(from || from === "/" ? "/aadarshbalika" : from, {
