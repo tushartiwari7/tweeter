@@ -36,7 +36,7 @@ export const User = () => {
         </Typography>
         <div className="follow-info">
           <Link to="followers">645 followers</Link>
-          <Link to="followings">645 following</Link>
+          <Link to="following">645 following</Link>
         </div>
       </div>
     </div>

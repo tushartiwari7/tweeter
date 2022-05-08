@@ -33,7 +33,7 @@ function Copyright(props) {
 }
 
 export function Login() {
-  const { loginState, setLoginState } = useAuth();
+  const { setLoginState } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   return (
