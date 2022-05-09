@@ -15,6 +15,7 @@ function LinkTab(props) {
       }}
       sx={{
         color: "var(--primary-color)",
+        textTransform: "none",
       }}
       {...props}
     />
