@@ -11,7 +11,6 @@ export const Tweets = () => {
       const resTweets = await axios.get(
         "https://my-json-server.typicode.com/rkapoor10/Twitter-API-user-tweets-endpoint/tweets"
       );
-      console.log(resTweets.data);
       setTweets(resTweets.data);
     } catch (error) {
       console.error(error);
