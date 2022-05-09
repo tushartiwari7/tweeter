@@ -323,3 +323,6 @@ aside nav button.profile .icon svg .head {
   transform-origin: 12px 9px;
   transform: rotate(var(--icon-r));
 }
+.working-link{
+  color:white;
+}

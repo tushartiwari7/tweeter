@@ -7,6 +7,7 @@ import {
   ComponentDisplay,
   FollowInsights,
   NotFound,
+  Tweets
 } from "./pages";
 import { User } from "./components";
 import { RequireAuth } from "./components";
@@ -25,6 +26,7 @@ function App() {
             </RequireAuth>
           }
         >
+          <Route path="/" element={<Tweets/>}/>
           <Route path="/:profileId" element={<Profile />}>
             <Route index element={<User />} />
             <Route path="followers" element={<FollowInsights />} />
