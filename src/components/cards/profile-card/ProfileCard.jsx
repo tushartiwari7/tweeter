@@ -7,10 +7,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function ProfileCard({ firstName, lastName, userImage, userName }) {
   const navigator = useNavigate();
+  const location = useLocation();
+  const pathname = location.pathname.split("/")[2];
   return (
     <ThemeProvider theme={DarkTheme}>
       <Card
@@ -62,10 +64,11 @@ export function ProfileCard({ firstName, lastName, userImage, userName }) {
             sx={{
               height: "fit-content",
               color: "secondary.main",
+              textTransform: "none",
               mr: 3,
             }}
           >
-            Follow
+            {pathname === "followers" ? "Unfollow" : "Follow"}
           </Button>
         </Box>
       </Card>
