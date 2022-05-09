@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       setUserDetails({ email, password });
       return data[0];
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
   useEffect(() => {

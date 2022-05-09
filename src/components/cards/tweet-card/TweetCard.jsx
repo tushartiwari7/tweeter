@@ -1,4 +1,3 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -12,12 +11,21 @@ import { ThemeProvider } from "@mui/material/styles";
 import { DarkTheme } from "../../index";
 import "./TweetCard.css";
 
-export function TweetCard({tweet}) {
-    console.log(tweet)
-    const {firstName, lastName, userName, likes, comments, retweets, tweetData, userImage, tweetImg} = tweet
+export function TweetCard({ tweet }) {
+  const {
+    firstName,
+    lastName,
+    userName,
+    likes,
+    comments,
+    retweets,
+    tweetData,
+    userImage,
+    tweetImg,
+  } = tweet;
   return (
     <ThemeProvider theme={DarkTheme}>
-      <Card sx={{ maxWidth: 550, margin:"5px" }}>
+      <Card sx={{ maxWidth: 550, margin: "5px" }}>
         <CardHeader
           avatar={
             <CardMedia
@@ -40,18 +48,19 @@ export function TweetCard({tweet}) {
             </Typography>
           </CardContent>
           <>
-          {
-              tweetImg && <CardMedia
-              sx={{
-                padding: "20px",
-                borderRadius: "20px",
-              }}
-              component="img"
-              minHeight="210"
-              image={tweetImg}
-              alt="Paella dish"
-            />
-          }</>
+            {tweetImg && (
+              <CardMedia
+                sx={{
+                  padding: "20px",
+                  borderRadius: "20px",
+                }}
+                component="img"
+                minHeight="210"
+                image={tweetImg}
+                alt="Paella dish"
+              />
+            )}
+          </>
           <CardActions
             disableSpacing
             sx={{ display: "flex", justifyContent: "space-around" }}

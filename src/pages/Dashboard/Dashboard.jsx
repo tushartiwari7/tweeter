@@ -1,14 +1,9 @@
 import { Container } from "@mui/material";
-import { Grid, Typography } from "@mui/material";
-import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { Sidebar, TweetCard } from "../../components";
-import { Box } from "@mui/system";
-import axios from "axios";
+import { Sidebar } from "../../components";
 
 export const Dashboard = () => {
   return (
-    // <Container sx={{ display: "flex" }}>
     <Container
       sx={{
         height: "100vh",
@@ -19,6 +14,5 @@ export const Dashboard = () => {
       <Sidebar />
       <Outlet />
     </Container>
-    // </Container>
   );
 };
