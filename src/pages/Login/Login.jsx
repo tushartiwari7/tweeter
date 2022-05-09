@@ -42,7 +42,6 @@ export function Login() {
   const [user, setUser] = useState({ userEmail: "", userPassword: "" });
 
   const loginHandler = (e) => {
-    console.log("button clicked");
     const { userEmail, userPassword } = user;
     const { email, password } = userDetails;
     // eslint-disable-next-line eqeqeq
