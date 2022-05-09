@@ -9,7 +9,6 @@ export const User = () => {
   const { users } = useAuth();
   const params = useParams();
   const user = users.find((user) => user.userName === params.profileId);
-  console.log(user);
   return (
     <div>
       <img src="https://picsum.photos/400/100" width="100%" alt="user" />
